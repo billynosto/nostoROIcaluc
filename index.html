@@ -19,6 +19,7 @@
 </head>
 <body class="p-4 md:p-8">
     <div class="max-w-6xl mx-auto">
+        <!-- Header -->
         <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
             <div class="flex items-center gap-4">
                 <div class="bg-nosto-pink p-3 rounded-xl text-white shadow-lg shadow-pink-600/20">
@@ -42,23 +43,28 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Side: Interactive Controls -->
             <div class="lg:col-span-4 space-y-6">
+                <!-- Baseline Metrics -->
                 <div class="card p-6 space-y-5">
                     <h2 class="text-xs font-black uppercase tracking-widest text-slate-500 flex items-center gap-2">
                         <i data-lucide="database" size="14" class="text-pink-500"></i> Baseline Metrics
                     </h2>
                     <div>
                         <label class="block text-[10px] font-bold uppercase mb-2 text-slate-400">Monthly Traffic</label>
-                        <input type="number" id="traffic" value="316667" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
+                        <!-- UPDATED DEFAULT TRAFFIC -->
+                        <input type="number" id="traffic" value="50000" autocomplete="off" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-[10px] font-bold uppercase mb-2 text-slate-400">CVR %</label>
-                            <input type="number" id="cvr" step="0.01" value="2.17" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
+                            <!-- UPDATED DEFAULT CVR -->
+                            <input type="number" id="cvr" step="0.01" value="2" autocomplete="off" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold uppercase mb-2 text-slate-400">AOV $</label>
-                            <input type="number" id="aov" value="101" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
+                            <!-- UPDATED DEFAULT AOV -->
+                            <input type="number" id="aov" value="150" autocomplete="off" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
                         </div>
                     </div>
 
@@ -67,7 +73,7 @@
                             <span>Day 1 Uplift %</span>
                             <span id="start-uplift-val" class="text-pink-500 font-black">2.5%</span>
                         </label>
-                        <input type="range" id="startUplift" min="0.5" max="5" step="0.1" value="2.5" class="w-full cursor-pointer mb-1">
+                        <input type="range" id="startUplift" min="0.5" max="5" step="0.1" value="2.5" autocomplete="off" class="w-full cursor-pointer mb-1">
                         <p class="text-[9px] text-slate-500 italic leading-tight">
                             Typical improvements from Nosto would be 2% at the start, which increases over time.
                         </p>
@@ -78,10 +84,11 @@
                             <span>Gross Margin %</span>
                             <span id="margin-val" class="text-pink-500 font-black">60%</span>
                         </label>
-                        <input type="range" id="margin" min="1" max="100" value="60" class="w-full cursor-pointer">
+                        <input type="range" id="margin" min="1" max="100" value="60" autocomplete="off" class="w-full cursor-pointer">
                     </div>
                 </div>
 
+                <!-- Investment -->
                 <div class="bg-pink-600 p-6 rounded-2xl shadow-xl shadow-pink-600/10 text-white space-y-4">
                     <h2 class="text-xs font-black uppercase tracking-widest mb-1 flex items-center gap-2">
                         <i data-lucide="shield-check" size="14"></i> Investment
@@ -90,13 +97,15 @@
                         <label class="block text-[10px] font-bold uppercase mb-2 opacity-80">Annual Platform Cost (AUD)</label>
                         <div class="relative">
                             <span class="absolute left-3 top-2 text-pink-200 font-bold">$</span>
-                            <input type="number" id="cost" value="25765" class="w-full bg-pink-700/50 border border-pink-400/30 rounded-lg pl-8 pr-3 py-2 text-white font-bold outline-none">
+                            <input type="number" id="cost" value="25765" autocomplete="off" class="w-full bg-pink-700/50 border border-pink-400/30 rounded-lg pl-8 pr-3 py-2 text-white font-bold outline-none">
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Right Side: Performance Roadmap & Timeline -->
             <div class="lg:col-span-8 space-y-6">
+                <!-- Main Impact Graph -->
                 <div class="card p-8">
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                         <h2 class="text-sm font-black text-white uppercase tracking-tighter">12-Month Revenue Roadmap</h2>
@@ -110,6 +119,7 @@
                     </div>
                 </div>
 
+                <!-- Timeline Table -->
                 <div class="card overflow-hidden">
                     <div class="p-4 bg-slate-900/50 border-b border-slate-800 flex justify-between items-center">
                         <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Optimization Timeline & Net Yield</h3>
@@ -132,12 +142,14 @@
             </div>
         </div>
 
+        <!-- Detailed Breakdown Section -->
         <div class="mt-12 mb-8">
             <div class="divider mb-6"></div>
             <h2 class="text-center text-xl font-black text-white uppercase tracking-[0.2em]">Detailed Breakdown</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+            <!-- Modular Levers -->
             <div class="lg:col-span-12 card p-8 bg-slate-900/30 border-slate-800/50">
                 <div class="flex items-center justify-between mb-8">
                     <h2 class="text-sm font-black text-white uppercase tracking-tighter flex items-center gap-2">
@@ -151,25 +163,26 @@
                             <span class="text-[10px] font-bold uppercase text-slate-400">Recommendations</span>
                             <span id="lever-recs-val" class="text-xs font-black text-pink-500">4%</span>
                         </div>
-                        <input type="range" id="lever-recs" min="0" max="10" step="0.5" value="4" class="w-full cursor-pointer">
+                        <input type="range" id="lever-recs" min="0" max="10" step="0.5" value="4" autocomplete="off" class="w-full cursor-pointer">
                     </div>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase text-slate-400">Category Merch</span>
                             <span id="lever-merch-val" class="text-xs font-black text-pink-500">3.5%</span>
                         </div>
-                        <input type="range" id="lever-merch" min="0" max="10" step="0.5" value="3.5" class="w-full cursor-pointer">
+                        <input type="range" id="lever-merch" min="0" max="10" step="0.5" value="3.5" autocomplete="off" class="w-full cursor-pointer">
                     </div>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase text-slate-400">Personalized Search</span>
                             <span id="lever-search-val" class="text-xs font-black text-pink-500">2.5%</span>
                         </div>
-                        <input type="range" id="lever-search" min="0" max="10" step="0.5" value="2.5" class="w-full cursor-pointer">
+                        <input type="range" id="lever-search" min="0" max="10" step="0.5" value="2.5" autocomplete="off" class="w-full cursor-pointer">
                     </div>
                 </div>
             </div>
 
+            <!-- Efficiency Grid -->
             <div class="lg:col-span-6 card p-6 border-l-4 border-l-pink-600 bg-slate-900/20">
                 <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 flex items-center justify-between">
                     Marketing Efficiency
@@ -248,7 +261,6 @@
             const months = Array.from({length: 12}, (_, i) => i + 1);
             const dataBaseline = months.map(() => baseMonthlyRev);
             const dataNosto = months.map(m => {
-                // Calculation: Linear ramp from startUplift to targetUplift
                 const ramp = startUplift + ((targetUplift - startUplift) * (m - 1) / 11);
                 return baseMonthlyRev * (1 + (ramp / 100));
             });
@@ -257,7 +269,6 @@
             const netProfit = (annualUplift * margin) - cost;
             const roi = cost > 0 ? (netProfit + cost) / cost : 0;
             
-            // Display Updates
             document.getElementById('roi-display').innerText = roi.toFixed(1) + 'x';
             document.getElementById('net-profit-header').innerText = fmt(netProfit);
 
@@ -313,15 +324,12 @@
         function updateTable(baseline, nosto, start, target, monthlyCost, margin) {
             const tbody = document.getElementById('table-body');
             tbody.innerHTML = '';
-            
             const steps = [0, 2, 5, 11];
             const labels = ["Pilot Launch", "Pattern Learning", "Module Expansion", "Full Optimization"];
-            
             steps.forEach((idx, i) => {
                 const ramp = start + ((target - start) * (idx) / 11);
                 const uplift = nosto[idx] - baseline;
                 const netMonthlyGain = (uplift * margin) - monthlyCost;
-                
                 const row = document.createElement('tr');
                 row.className = 'table-row border-b border-slate-800/50 transition-colors';
                 row.innerHTML = `
@@ -344,7 +352,13 @@
             document.getElementById(id).addEventListener('input', calculate);
         });
 
-        calculate();
+        window.onload = function() {
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = el.getAttribute('value');
+            });
+            calculate();
+        };
     </script>
 </body>
 </html>
