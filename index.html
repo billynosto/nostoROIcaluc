@@ -19,7 +19,6 @@
 </head>
 <body class="p-4 md:p-8">
     <div class="max-w-6xl mx-auto">
-        <!-- Header -->
         <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
             <div class="flex items-center gap-4">
                 <div class="bg-nosto-pink p-3 rounded-xl text-white shadow-lg shadow-pink-600/20">
@@ -43,9 +42,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <!-- Left Side: Interactive Controls -->
             <div class="lg:col-span-4 space-y-6">
-                <!-- Baseline Metrics -->
                 <div class="card p-6 space-y-5">
                     <h2 class="text-xs font-black uppercase tracking-widest text-slate-500 flex items-center gap-2">
                         <i data-lucide="database" size="14" class="text-pink-500"></i> Baseline Metrics
@@ -64,6 +61,18 @@
                             <input type="number" id="aov" value="101" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white outline-none focus:border-pink-500">
                         </div>
                     </div>
+
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-2 text-slate-400 flex justify-between">
+                            <span>Day 1 Uplift %</span>
+                            <span id="start-uplift-val" class="text-pink-500 font-black">2.5%</span>
+                        </label>
+                        <input type="range" id="startUplift" min="0.5" max="5" step="0.1" value="2.5" class="w-full cursor-pointer mb-1">
+                        <p class="text-[9px] text-slate-500 italic leading-tight">
+                            Typical improvements from Nosto would be 2% at the start, which increases over time.
+                        </p>
+                    </div>
+
                     <div>
                         <label class="block text-[10px] font-bold uppercase mb-2 text-slate-400 flex justify-between">
                             <span>Gross Margin %</span>
@@ -73,7 +82,6 @@
                     </div>
                 </div>
 
-                <!-- Investment -->
                 <div class="bg-pink-600 p-6 rounded-2xl shadow-xl shadow-pink-600/10 text-white space-y-4">
                     <h2 class="text-xs font-black uppercase tracking-widest mb-1 flex items-center gap-2">
                         <i data-lucide="shield-check" size="14"></i> Investment
@@ -86,15 +94,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="p-4 bg-slate-900/30 rounded-xl border border-slate-800 italic text-[10px] text-slate-500 leading-relaxed">
-                    Adjust the metrics on the left and the Modular Levers below to see how the roadmap and net gain evolve.
-                </div>
             </div>
 
-            <!-- Right Side: Performance Roadmap & Timeline -->
             <div class="lg:col-span-8 space-y-6">
-                <!-- Main Impact Graph -->
                 <div class="card p-8">
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                         <h2 class="text-sm font-black text-white uppercase tracking-tighter">12-Month Revenue Roadmap</h2>
@@ -108,7 +110,6 @@
                     </div>
                 </div>
 
-                <!-- Timeline Table -->
                 <div class="card overflow-hidden">
                     <div class="p-4 bg-slate-900/50 border-b border-slate-800 flex justify-between items-center">
                         <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Optimization Timeline & Net Yield</h3>
@@ -124,61 +125,51 @@
                                 </tr>
                             </thead>
                             <tbody id="table-body" class="text-slate-300">
-                                <!-- Data rows injected by JS -->
-                            </tbody>
+                                </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Detailed Breakdown Section -->
         <div class="mt-12 mb-8">
             <div class="divider mb-6"></div>
             <h2 class="text-center text-xl font-black text-white uppercase tracking-[0.2em]">Detailed Breakdown</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-            <!-- Modular Levers -->
             <div class="lg:col-span-12 card p-8 bg-slate-900/30 border-slate-800/50">
                 <div class="flex items-center justify-between mb-8">
                     <h2 class="text-sm font-black text-white uppercase tracking-tighter flex items-center gap-2">
                         <i data-lucide="layers" size="16" class="text-pink-500"></i> Modular Performance Levers
                     </h2>
-                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Combined Uplift: <span id="total-uplift-badge" class="text-pink-500 font-black text-sm">0%</span></div>
+                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Year 1 Target: <span id="total-uplift-badge" class="text-pink-500 font-black text-sm">0%</span></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Lever 1 -->
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase text-slate-400">Recommendations</span>
                             <span id="lever-recs-val" class="text-xs font-black text-pink-500">4%</span>
                         </div>
                         <input type="range" id="lever-recs" min="0" max="10" step="0.5" value="4" class="w-full cursor-pointer">
-                        <p class="text-[9px] text-slate-500 leading-tight">Dynamic product discovery across key site touchpoints.</p>
                     </div>
-                    <!-- Lever 2 -->
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase text-slate-400">Category Merch</span>
                             <span id="lever-merch-val" class="text-xs font-black text-pink-500">3.5%</span>
                         </div>
                         <input type="range" id="lever-merch" min="0" max="10" step="0.5" value="3.5" class="w-full cursor-pointer">
-                        <p class="text-[9px] text-slate-500 leading-tight">Automated sorting and personalized product listing pages.</p>
                     </div>
-                    <!-- Lever 3 -->
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase text-slate-400">Personalized Search</span>
                             <span id="lever-search-val" class="text-xs font-black text-pink-500">2.5%</span>
                         </div>
                         <input type="range" id="lever-search" min="0" max="10" step="0.5" value="2.5" class="w-full cursor-pointer">
-                        <p class="text-[9px] text-slate-500 leading-tight">Intent-based search results and query personalization.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Efficiency Grid -->
             <div class="lg:col-span-6 card p-6 border-l-4 border-l-pink-600 bg-slate-900/20">
                 <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 flex items-center justify-between">
                     Marketing Efficiency
@@ -192,7 +183,6 @@
                         <p class="text-[10px] text-slate-400 uppercase font-black mb-1">Effective Cost-per-Acquisition</p>
                         <p class="text-xl font-black text-pink-500">~8-12% Decrease</p>
                     </div>
-                    <p class="text-[9px] text-slate-500 italic">"By converting more visitors into customers, your blended CAC lowers across all paid channels including Meta and Google Ads."</p>
                 </div>
             </div>
 
@@ -215,7 +205,6 @@
                             <p class="text-xl font-black text-pink-500">1.25 Days</p>
                         </div>
                     </div>
-                    <p class="text-[9px] text-slate-500 italic">"Based on typical Nosto customer benchmark of reclaiming over 40 hours per month for higher-value strategic tasks."</p>
                 </div>
             </div>
         </div>
@@ -239,8 +228,9 @@
             const aov = parseFloat(document.getElementById('aov').value) || 0;
             const margin = (parseFloat(document.getElementById('margin').value) || 0) / 100;
             const cost = parseFloat(document.getElementById('cost').value) || 0;
+            const startUplift = parseFloat(document.getElementById('startUplift').value) || 0;
             
-            // Modular Levers
+            // Modular Levers (Year 1 Target)
             const lRecs = parseFloat(document.getElementById('lever-recs').value);
             const lMerch = parseFloat(document.getElementById('lever-merch').value);
             const lSearch = parseFloat(document.getElementById('lever-search').value);
@@ -251,13 +241,15 @@
             document.getElementById('lever-search-val').innerText = lSearch + '%';
             document.getElementById('total-uplift-badge').innerText = targetUplift.toFixed(1) + '%';
             document.getElementById('margin-val').innerText = Math.round(margin * 100) + '%';
+            document.getElementById('start-uplift-val').innerText = startUplift.toFixed(1) + '%';
 
             // Calculations
             const baseMonthlyRev = traffic * cvr * aov;
             const months = Array.from({length: 12}, (_, i) => i + 1);
             const dataBaseline = months.map(() => baseMonthlyRev);
             const dataNosto = months.map(m => {
-                const ramp = 2.5 + ((targetUplift - 2.5) * (m - 1) / 11);
+                // Calculation: Linear ramp from startUplift to targetUplift
+                const ramp = startUplift + ((targetUplift - startUplift) * (m - 1) / 11);
                 return baseMonthlyRev * (1 + (ramp / 100));
             });
 
@@ -270,7 +262,7 @@
             document.getElementById('net-profit-header').innerText = fmt(netProfit);
 
             updateChart(months, dataBaseline, dataNosto);
-            updateTable(baseMonthlyRev, dataNosto, targetUplift, cost/12, margin);
+            updateTable(baseMonthlyRev, dataNosto, startUplift, targetUplift, cost/12, margin);
         }
 
         function updateChart(labels, baseline, nosto) {
@@ -318,7 +310,7 @@
             });
         }
 
-        function updateTable(baseline, nosto, target, monthlyCost, margin) {
+        function updateTable(baseline, nosto, start, target, monthlyCost, margin) {
             const tbody = document.getElementById('table-body');
             tbody.innerHTML = '';
             
@@ -326,7 +318,7 @@
             const labels = ["Pilot Launch", "Pattern Learning", "Module Expansion", "Full Optimization"];
             
             steps.forEach((idx, i) => {
-                const ramp = 2.5 + ((target - 2.5) * (idx) / 11);
+                const ramp = start + ((target - start) * (idx) / 11);
                 const uplift = nosto[idx] - baseline;
                 const netMonthlyGain = (uplift * margin) - monthlyCost;
                 
@@ -347,7 +339,7 @@
             });
         }
 
-        const inputs = ['traffic', 'cvr', 'aov', 'cost', 'margin', 'lever-recs', 'lever-merch', 'lever-search'];
+        const inputs = ['traffic', 'cvr', 'aov', 'cost', 'margin', 'startUplift', 'lever-recs', 'lever-merch', 'lever-search'];
         inputs.forEach(id => {
             document.getElementById(id).addEventListener('input', calculate);
         });
